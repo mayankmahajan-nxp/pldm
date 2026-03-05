@@ -127,11 +127,7 @@ conf_data.set(
 )
 conf_data.set_quoted('HOST_EID_PATH', join_paths(package_datadir, 'host_eid'))
 conf_data.set('MAXIMUM_TRANSFER_SIZE', get_option('maximum-transfer-size'))
-if get_option('transport-implementation') == 'mctp-demux'
-    conf_data.set('PLDM_TRANSPORT_WITH_MCTP_DEMUX', 1)
-elif get_option('transport-implementation') == 'af-mctp'
-    conf_data.set('PLDM_TRANSPORT_WITH_AF_MCTP', 1)
-endif
+conf_data.set('PLDM_TRANSPORT_WITH_AF_MCTP', 1)
 conf_data.set(
     'DEFAULT_SENSOR_UPDATER_INTERVAL',
     get_option('default-sensor-update-interval'),
